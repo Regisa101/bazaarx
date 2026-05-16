@@ -86,7 +86,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="footer-bottom-inner">
-          <p className="footer-copy">© 2025 BazaarX. Made with ♥ in Nepal.</p>
+          <p className="footer-copy">© 2025 BazaarX. </p>
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

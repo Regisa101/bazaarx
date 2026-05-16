@@ -122,8 +122,8 @@ export default function Signup() {
         {/* Role picker */}
         <div className="auth-role-picker">
           {[
-            { key:"buyer",  label:"Buyer",  sub:"Shop products", icon:"🛍️" },
-            { key:"seller", label:"Seller", sub:"Sell products",  icon:"🏪" },
+            { key:"buyer",  label:"Buyer",  sub:"Shop products"},
+            { key:"seller", label:"Seller", sub:"Sell products"},
           ].map(r => (
             <button key={r.key} type="button"
               className={`role-btn ${role === r.key ? "role-btn--active" : ""}`}

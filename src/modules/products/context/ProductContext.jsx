@@ -7,7 +7,7 @@ const ProductContext = createContext(null);
 const STORAGE_KEY = "bazaarx_products";
 
 export function ProductProvider({ children }) {
-  // ✅ FIX: Load from localStorage first — products no longer vanish on refresh
+  // Load from localStorage first — products persist across refreshes
   const [products, setProducts] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -28,7 +28,7 @@ export function ProductProvider({ children }) {
     setProductsRef(products);
   }, [products]);
 
-  // ✅ FIX: Save to localStorage whenever products change
+  // Save to localStorage whenever products change
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(products));
@@ -41,12 +41,12 @@ export function ProductProvider({ children }) {
   const addProduct = (product) => {
     const newProduct = {
       ...product,
-      id:       Date.now(),
-      rating:   0,
-      reviews:  [],
-      stock:    parseInt(product.stock)   || 0,
-      price:    parseFloat(product.price) || 0,
-      variants: product.variants          || [],
+      id: Date.now(),
+      rating: 0,
+      reviews: [],
+      stock: parseInt(product.stock) || 0,
+      price: parseFloat(product.price) || 0,
+      variants: product.variants || [],
     };
     setProducts((prev) => [newProduct, ...prev]);
     return newProduct;
@@ -60,13 +60,22 @@ export function ProductProvider({ children }) {
       prev.map((p) => (p.id === id ? { ...p, ...updated } : p))
     );
 
-  // Decrease stock when an order is placed
+  // Decrease stock when an order is placed.
+  // cart items have a `cartId` like "42__Red|M" — we match on product id only
+  // since stock is per-product (not per-variant) in this data model.
   const decreaseStock = (items) => {
+    // Group quantities by product id (sum across all variants of same product)
+    const totals = {};
+    items.forEach((item) => {
+      const pid = item.id;
+      totals[pid] = (totals[pid] || 0) + item.quantity;
+    });
+
     setProducts((prev) =>
       prev.map((p) => {
-        const ordered = items.find((i) => i.id === p.id);
-        if (!ordered) return p;
-        return { ...p, stock: Math.max(0, p.stock - ordered.quantity) };
+        const qty = totals[p.id];
+        if (!qty) return p;
+        return { ...p, stock: Math.max(0, p.stock - qty) };
       })
     );
   };
@@ -77,7 +86,8 @@ export function ProductProvider({ children }) {
       prev.map((p) => {
         if (p.id !== productId) return p;
         const reviews = [review, ...(p.reviews || [])];
-        const rating  = reviews.reduce((s, r) => s + r.rating, 0) / reviews.length;
+        const rating =
+          reviews.reduce((s, r) => s + r.rating, 0) / reviews.length;
         return { ...p, reviews, rating };
       })
     );
@@ -88,9 +98,10 @@ export function ProductProvider({ children }) {
       prev.map((p) => {
         if (p.id !== productId) return p;
         const reviews = p.reviews.filter((r) => r.id !== reviewId);
-        const rating  = reviews.length > 0
-          ? reviews.reduce((s, r) => s + r.rating, 0) / reviews.length
-          : 0;
+        const rating =
+          reviews.length > 0
+            ? reviews.reduce((s, r) => s + r.rating, 0) / reviews.length
+            : 0;
         return { ...p, reviews, rating };
       })
     );
@@ -100,16 +111,18 @@ export function ProductProvider({ children }) {
     products.filter((p) => p.seller === sellerName);
 
   return (
-    <ProductContext.Provider value={{
-      products,
-      addProduct,
-      deleteProduct,
-      updateProduct,
-      decreaseStock,
-      addReview,
-      removeReview,
-      getSellerProducts,
-    }}>
+    <ProductContext.Provider
+      value={{
+        products,
+        addProduct,
+        deleteProduct,
+        updateProduct,
+        decreaseStock,
+        addReview,
+        removeReview,
+        getSellerProducts,
+      }}
+    >
       {children}
     </ProductContext.Provider>
   );

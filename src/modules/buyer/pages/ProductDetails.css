@@ -107,12 +107,121 @@
 
 .pd-tag { font-size: 0.72rem; font-weight: 500; padding: 4px 10px; background: #f5f5f5; color: #666; }
 
+/* ── Variants ── */
+.pd-variants { margin-bottom: 1rem; }
+
+.pd-variant-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Badge shown next to dims that affect price */
+.pd-variant-price-affecting-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: #fff8e1;
+  color: #e09500;
+  border: 1px solid #f0a500;
+  padding: 1px 6px;
+  margin-left: 4px;
+}
+
+.pd-variant-options { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.pd-variant-btn {
+  padding: 7px 14px;
+  border: 1.5px solid #e0e0e0;
+  background: #fff;
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border-radius: 0 !important;
+}
+
+.pd-variant-btn:hover { border-color: #111; color: #111; }
+.pd-variant-btn--active { border-color: #111; background: #111; color: #fff; }
+.pd-variant-btn--active .pd-variant-price-tag { color: #f0a500; }
+
+/* Price shown inside variant button (for price-affecting dims like volume) */
+.pd-variant-price-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #888;
+  margin-top: 1px;
+}
+
+.pd-variant-error { font-size: 0.78rem; color: #e53935; margin: 6px 0 0; }
+
+/* ── Cart variants summary ── */
+/* Shows all variant rows of THIS product already in the cart */
+.pd-cart-variants-summary {
+  background: #f9f9f9;
+  border: 1.5px solid #f0f0f0;
+  border-left: 3px solid #f0a500;
+  padding: 10px 14px;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.pd-cart-variants-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px;
+}
+
+.pd-cart-variant-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.pd-cart-variant-row:last-child { border-bottom: none; }
+
+.pd-cart-variant-label {
+  flex: 1;
+  color: #444;
+  font-weight: 500;
+}
+
+.pd-cart-variant-qty {
+  color: #888;
+  font-weight: 600;
+}
+
+.pd-cart-variant-price {
+  color: #111;
+  font-weight: 700;
+}
+
+/* ── Stock ── */
 .pd-stock-info { margin-bottom: 1.25rem; font-size: 0.875rem; font-weight: 600; }
 
 .in-stock { color: #2e7d32; }
 .low-stock { color: #e65100; }
 .out-of-stock { color: #aaa; }
 
+.pd-in-cart-note { font-size: 0.8rem; color: #888; font-weight: 400; margin-left: 6px; }
+
+/* ── Actions ── */
 .pd-actions { display: flex; gap: 10px; margin-bottom: 1.5rem; }
 
 .pd-btn-add {
@@ -149,12 +258,13 @@
 
 .pd-btn-cart:hover:not(:disabled) { background: #e09500; }
 
+/* ── Delivery ── */
 .pd-delivery { border-top: 1px solid #f0f0f0; padding-top: 1rem; display: flex; flex-direction: column; gap: 10px; }
 
 .pd-delivery-item { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: #666; }
 .pd-delivery-item svg { color: #f0a500; flex-shrink: 0; }
 
-/* Section title */
+/* ── Section title ── */
 .pd-section-title {
   font-size: 1.25rem;
   font-weight: 700;
@@ -165,7 +275,7 @@
   border-bottom: 2px solid #f5f5f5;
 }
 
-/* Suggested */
+/* ── Suggested ── */
 .pd-suggested { background: #fff; padding: 2rem; margin-bottom: 1rem; }
 
 .pd-suggested-grid {
@@ -199,7 +309,7 @@
 .pd-suggested-avg { font-size: 0.72rem; color: #aaa; }
 .pd-suggested-price { font-size: 0.9rem; font-weight: 700; color: #111; margin: 4px 0 0; }
 
-/* Reviews */
+/* ── Reviews ── */
 .pd-reviews { background: #fff; padding: 2rem; }
 
 .pd-reviews-summary {
@@ -226,7 +336,7 @@
 .pd-dist-bar { height: 100%; background: #f0a500; transition: width 0.6s ease; min-width: 0; }
 .pd-dist-count { font-size: 0.8rem; color: #aaa; width: 20px; text-align: right; }
 
-/* Moderation notice */
+/* ── Moderation notice ── */
 .pd-moderation-notice {
   display: flex;
   align-items: center;
@@ -242,7 +352,7 @@
 
 .pd-moderation-notice svg { color: #f0a500; flex-shrink: 0; }
 
-/* Review list */
+/* ── Review list ── */
 .pd-review-list { display: flex; flex-direction: column; gap: 1px; margin-bottom: 2.5rem; }
 
 .pd-no-reviews { font-size: 0.875rem; color: #aaa; padding: 1.5rem 0; text-align: center; }
@@ -301,7 +411,7 @@
   border: 1px solid #f0f0f0;
 }
 
-/* Write review */
+/* ── Write review ── */
 .pd-write-review { background: #fafafa; padding: 1.75rem; border: 1px solid #f0f0f0; }
 
 .pd-write-title { font-size: 1rem; font-weight: 700; color: #111; margin: 0 0 1.25rem; font-family: 'League Spartan', sans-serif; }
@@ -345,8 +455,6 @@
 
 .pd-review-form { display: flex; flex-direction: column; gap: 1rem; }
 
-.pd-review-form-row { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-
 .pd-review-field { display: flex; flex-direction: column; gap: 6px; }
 
 .pd-review-field label { font-size: 0.8rem; font-weight: 600; color: #444; }
@@ -370,24 +478,7 @@
 .pd-review-field input:focus,
 .pd-review-field textarea:focus { border-color: #111; }
 
-/* Review image preview */
-.pd-review-img-preview {
-  margin-top: 8px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.pd-review-img-preview img {
-  max-width: 100px;
-  max-height: 80px;
-  object-fit: cover;
-  border: 1px solid #f0f0f0;
-}
-
-.pd-review-img-note { font-size: 0.72rem; color: #aaa; margin: 0; }
-
-/* Interactive stars */
+/* ── Interactive stars ── */
 .interactive-stars { display: flex; align-items: center; gap: 4px; padding: 8px 0; }
 
 .istar {
@@ -423,11 +514,11 @@
 .pd-review-submit:hover:not(:disabled) { background: #333; }
 .pd-review-submit:disabled { background: #ccc; cursor: not-allowed; }
 
-/* Not found */
+/* ── Not found ── */
 .pd-not-found { text-align: center; padding: 5rem; font-family: 'Poppins', sans-serif; color: #888; }
 .pd-not-found a { color: #111; }
 
-/* Gallery upload button for review */
+/* ── Gallery upload button for review ── */
 .pd-review-upload-btn {
   display: flex;
   align-items: center;
@@ -452,7 +543,7 @@
   color: #111;
 }
 
-/* Image preview box */
+/* ── Review image preview box ── */
 .pd-review-img-preview-box {
   position: relative;
   display: inline-block;
@@ -483,3 +574,106 @@
 }
 
 .pd-review-img-remove:hover { background: #e53935; }
+
+/* ── Gallery ── */
+.pd-gallery {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.pd-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pd-thumb {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #e0e0e0;
+  background: #f7f5f2;
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  transition: border-color 0.15s;
+  border-radius: 0 !important;
+}
+
+.pd-thumb--active { border-color: #111; }
+.pd-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.pd-main-img-wrap {
+  flex: 1;
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #f7f5f2;
+  cursor: crosshair;
+}
+
+.pd-main-img-wrap--zoomed { cursor: zoom-in; }
+
+.pd-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0s;
+  user-select: none;
+  display: block;
+}
+
+.pd-zoom-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  pointer-events: none;
+}
+
+.pd-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.9);
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 10px;
+  color: #111;
+  z-index: 2;
+  transition: background 0.15s;
+  border-radius: 0 !important;
+}
+
+.pd-gallery-arrow:hover { background: #fff; }
+.pd-gallery-arrow--prev { left: 8px; }
+.pd-gallery-arrow--next { right: 8px; }
+
+.pd-gallery-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.pd-gallery-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s;
+}
+
+.pd-gallery-dot--active { background: #fff; }

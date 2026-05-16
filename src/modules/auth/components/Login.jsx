@@ -61,24 +61,6 @@ export default function Login() {
         </form>
 
         <p className="auth-switch">Don't have an account? <Link to="/signup">Sign up</Link></p>
-
-        <div className="auth-demo-accounts">
-          <p className="auth-demo-title">Demo accounts</p>
-          <div className="auth-demo-list">
-            {[
-              { role: "admin",  email: "admin@bazaarx.com",  password: "admin123" },
-              { role: "seller", email: "seller@bazaarx.com", password: "seller123" },
-              { role: "buyer",  email: "buyer@bazaarx.com",  password: "buyer123" },
-            ].map(a => (
-              <button key={a.role} className="auth-demo-item auth-demo-clickable"
-                onClick={() => { setEmail(a.email); setPassword(a.password); setError(""); }}>
-                <span className={`auth-demo-role ${a.role}`}>{a.role}</span>
-                <span>{a.email}</span>
-                <span className="auth-demo-click">Click to fill</span>
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

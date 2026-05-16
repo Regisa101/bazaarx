@@ -47,7 +47,6 @@ const SLIDES = [
   },
 ];
 
-// ── Category collection panels (like the reference) ───────────
 const COLLECTIONS = [
   {
     title: "Home & Living",
@@ -222,10 +221,16 @@ export default function BuyerHome() {
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
 
-  // Flash sale = first 8 products with fake discount
-  const flashProducts = products.slice(0, 8).map((p) => ({
-    ...p, originalPrice: Math.round(p.price * 1.35),
-  }));
+  // ── Flash sale: only products the seller opted into ──────────
+  // Uses flashPrice (pre-calculated discounted price) set by the seller in AddProduct.
+  // Falls back to comparePrice as the "original" crossed-out price, or estimates +35% if none set.
+  const flashProducts = products
+    .filter((p) => p.inFlashSale === true && p.stock > 0)
+    .map((p) => ({
+      ...p,
+      displayFlashPrice: p.flashPrice ?? p.price,
+      originalPrice:     p.comparePrice ?? Math.round(p.price * 1.35),
+    }));
 
   const searchBar = (
     <SearchBar products={products} onSearch={handleSearch} />
@@ -241,7 +246,6 @@ export default function BuyerHome() {
           HERO SLIDER
       ══════════════════════════════════════ */}
       <section className="bh-hero" style={{ background: cur.bg }}>
-        {/* Text side */}
         <div className="bh-hero-text">
           <span className="bh-hero-tag" style={{ color: cur.textDark ? "#111" : "#f0a500" }}>
             {cur.tag}
@@ -266,16 +270,10 @@ export default function BuyerHome() {
           </button>
         </div>
 
-        {/* Image side */}
         <div className="bh-hero-img-wrap">
-          <img
-            src={cur.img}
-            alt={cur.tag}
-            className="bh-hero-img"
-          />
+          <img src={cur.img} alt={cur.tag} className="bh-hero-img" />
         </div>
 
-        {/* Dot navigation */}
         <div className="bh-hero-dots">
           {SLIDES.map((_, i) => (
             <button
@@ -289,53 +287,67 @@ export default function BuyerHome() {
 
       {/* ══════════════════════════════════════
           FLASH SALE
+          Only shown when at least one seller has opted in
       ══════════════════════════════════════ */}
-      <section className="bh-flash">
-        <div className="bh-inner">
-          <div className="bh-flash-header">
-            <div className="bh-flash-left">
-              <h2 className="bh-section-title">Flash Sale</h2>
-              <div className="bh-timer">
-                <span className="bh-timer-label">Ends in</span>
-                <span className="bh-timer-block">{h}</span>
-                <span className="bh-timer-sep">:</span>
-                <span className="bh-timer-block">{m}</span>
-                <span className="bh-timer-sep">:</span>
-                <span className="bh-timer-block">{s}</span>
+      {flashProducts.length > 0 && (
+        <section className="bh-flash">
+          <div className="bh-inner">
+            <div className="bh-flash-header">
+              <div className="bh-flash-left">
+                <h2 className="bh-section-title">Flash Sale</h2>
+                <div className="bh-timer">
+                  <span className="bh-timer-label">Ends in</span>
+                  <span className="bh-timer-block">{h}</span>
+                  <span className="bh-timer-sep">:</span>
+                  <span className="bh-timer-block">{m}</span>
+                  <span className="bh-timer-sep">:</span>
+                  <span className="bh-timer-block">{s}</span>
+                </div>
               </div>
+              <button
+                className="bh-view-all"
+                onClick={() => {
+                  setActiveCat("All");
+                  setSearch("");
+                  productsRef.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                View All →
+              </button>
             </div>
-            <button
-              className="bh-view-all"
-              onClick={() => { setActiveCat("All"); setSearch(""); productsRef.current?.scrollIntoView({ behavior: "smooth" }); }}
-            >
-              View All →
-            </button>
-          </div>
 
-          <div className="bh-flash-scroll">
-            {flashProducts.map((p) => (
-              <Link to={`/buyer/product/${p.id}`} key={p.id} className="bh-flash-card">
-                <div className="bh-flash-img-wrap">
-                  <img src={p.image} alt={p.name} className="bh-flash-img" />
-                  <span className="bh-flash-badge">SALE</span>
-                  {p.stock === 0 && <div className="bh-flash-oos">Sold Out</div>}
-                </div>
-                <div className="bh-flash-info">
-                  <p className="bh-flash-name">
-                    {p.name.length > 28 ? p.name.slice(0, 28) + "…" : p.name}
-                  </p>
-                  <div className="bh-flash-prices">
-                    <span className="bh-flash-price">Rs. {p.price.toLocaleString()}</span>
-                    <span className="bh-flash-original">Rs. {p.originalPrice.toLocaleString()}</span>
+            <div className="bh-flash-scroll">
+              {flashProducts.map((p) => (
+                <Link to={`/buyer/product/${p.id}`} key={p.id} className="bh-flash-card">
+                  <div className="bh-flash-img-wrap">
+                    <img src={p.image} alt={p.name} className="bh-flash-img" />
+                    {/* Show discount % badge */}
+                    <span className="bh-flash-badge">
+                      -{p.flashDiscount}% OFF
+                    </span>
+                    {p.stock === 0 && <div className="bh-flash-oos">Sold Out</div>}
                   </div>
-                </div>
-              </Link>
-            ))}
+                  <div className="bh-flash-info">
+                    <p className="bh-flash-name">
+                      {p.name.length > 28 ? p.name.slice(0, 28) + "…" : p.name}
+                    </p>
+                    <div className="bh-flash-prices">
+                      {/* discounted flash price */}
+                      <span className="bh-flash-price">
+                        Rs. {p.displayFlashPrice.toLocaleString()}
+                      </span>
+                      {/* original price crossed out */}
+                      <span className="bh-flash-original">
+                        Rs. {p.originalPrice.toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      
+        </section>
+      )}
 
       {/* ══════════════════════════════════════
           ALL PRODUCTS
@@ -343,7 +355,6 @@ export default function BuyerHome() {
       <section className="bh-products" ref={productsRef}>
         <div className="bh-inner">
 
-          {/* Section header */}
           <div className="bh-products-header">
             <div>
               <h2 className="bh-section-title">
@@ -358,7 +369,7 @@ export default function BuyerHome() {
             <span className="bh-count">{filtered.length} items</span>
           </div>
 
-          {/* Category filter — single row, horizontal scroll */}
+          {/* Category filter */}
           <div className="bh-cat-tabs">
             {CATEGORIES.map((cat) => (
               <button
