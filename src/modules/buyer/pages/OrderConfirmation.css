@@ -1,0 +1,150 @@
+.oc-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.oc-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.oc-card {
+  background: #fff;
+  padding: 3rem 2.5rem;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.oc-success-icon {
+  width: 64px;
+  height: 64px;
+  background: #2e7d32;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.oc-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 8px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.oc-sub {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 1rem;
+}
+
+.oc-order-id {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+  padding: 8px 16px;
+  background: #f5f5f5;
+  display: inline-block;
+}
+
+.oc-details { text-align: left; }
+
+.oc-section {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.oc-section h3 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #aaa;
+  margin: 0 0 8px;
+}
+
+.oc-section p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0 0 3px;
+}
+
+.oc-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.oc-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: #fafafa;
+}
+
+.oc-item-img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.oc-item-info { flex: 1; }
+.oc-item-name { font-size: 0.875rem; font-weight: 500; color: #111; margin: 0 0 2px; }
+.oc-item-seller { font-size: 0.75rem; color: #aaa; margin: 0; }
+.oc-item-price { font-size: 0.875rem; font-weight: 600; color: #111; }
+
+.oc-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.25rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.oc-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+.oc-btn-orders {
+  flex: 1;
+  padding: 12px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+  transition: background 0.2s;
+  border-radius: 0 !important;
+}
+
+.oc-btn-orders:hover { background: #333; }
+
+.oc-btn-shop {
+  flex: 1;
+  padding: 12px;
+  background: #fff;
+  color: #111;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1.5px solid #ddd;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+}
+
+.oc-btn-shop:hover { border-color: #111; }

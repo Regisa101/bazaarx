@@ -1,0 +1,430 @@
+/* ═══════════════════════════════════════════════════════════════
+   Setup.css  —  BazaarX Seller Onboarding (Store + Payment Setup)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Page shell ───────────────────────────────────────────────── */
+.setup-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Progress strip at very top ──────────────────────────────── */
+.setup-progress {
+  width: 100%;
+  height: 3px;
+  background: #e8e8e8;
+  flex-shrink: 0;
+}
+
+.setup-progress-bar {
+  height: 100%;
+  background: #f0a500;
+  transition: width 0.4s ease;
+}
+
+/* ── Two-column layout ───────────────────────────────────────── */
+.setup-wrap {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+.setup-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background: #111;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.setup-logo {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.setup-logo span { color: #f0a500; }
+
+/* ── Step list ───────────────────────────────────────────────── */
+.setup-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.setup-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.setup-step--active .setup-step-label { color: #fff; font-weight: 700; }
+.setup-step--done   .setup-step-label { color: #aaa; }
+
+.setup-step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f0a500;
+  color: #111;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.setup-step-num--inactive {
+  background: #2a2a2a;
+  color: #555;
+}
+
+.setup-step-num--done {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.setup-step-text { flex: 1; }
+
+.setup-step-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 2px;
+}
+
+.setup-label--dim { color: #666 !important; font-weight: 500 !important; }
+
+.setup-step-sub {
+  font-size: 0.75rem;
+  color: #555;
+  margin: 0;
+}
+
+.setup-step-line {
+  width: 2px;
+  height: 28px;
+  background: #2a2a2a;
+  margin: 4px 0 4px 15px;
+}
+
+.setup-step-line--done { background: #2e7d32; }
+
+/* ── Info / commission box ───────────────────────────────────── */
+.setup-info-box {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 1.25rem;
+  margin-top: auto;
+}
+
+.setup-info-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+  margin: 0 0 6px;
+}
+
+.setup-info-rate {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f0a500;
+  margin: 0 0 6px;
+}
+
+.setup-info-desc {
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Main area ───────────────────────────────────────────────── */
+.setup-main {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: #f5f5f5;
+}
+
+.setup-main-inner {
+  width: 100%;
+  max-width: 560px;
+}
+
+.setup-title {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.03em;
+  margin: 0 0 6px;
+}
+
+.setup-subtitle {
+  font-size: 0.875rem;
+  color: #888;
+  margin: 0 0 2rem;
+  line-height: 1.6;
+}
+
+/* ── Form ────────────────────────────────────────────────────── */
+.setup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.setup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.setup-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.setup-field input,
+.setup-field select {
+  padding: 10px 12px;
+  border: 1.5px solid #e8e8e8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  color: #111;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0 !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.setup-field input:focus,
+.setup-field select:focus {
+  border-color: #111;
+}
+
+.setup-field select:disabled {
+  background: #f5f5f5;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Two-column row */
+.setup-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Validation */
+.setup-error {
+  font-size: 0.75rem;
+  color: #e53935;
+  font-weight: 500;
+}
+
+.setup-error-banner {
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  color: #c62828;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 10px 14px;
+}
+
+.setup-req     { color: #e53935; }
+.setup-optional { font-weight: 400; color: #aaa; font-size: 0.75rem; }
+
+/* Checkbox row */
+.setup-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.8375rem;
+  color: #444;
+  margin-top: 4px;
+}
+
+.setup-checkbox-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #111;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Actions ─────────────────────────────────────────────────── */
+.setup-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 0.5rem;
+}
+
+.setup-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 0 !important;
+}
+
+.setup-btn-primary:hover { background: #333; }
+
+.setup-btn-skip {
+  background: none;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8375rem;
+  color: #aaa;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.setup-btn-skip:hover { color: #555; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PAYMENT METHOD CARDS (PaymentSetup specific)
+═══════════════════════════════════════════════════════════════ */
+.setup-payment-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setup-method-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.15s, background 0.15s;
+  text-align: left;
+  border-radius: 0 !important;
+}
+
+.setup-method-card:hover {
+  border-color: #aaa;
+}
+
+.setup-method-card--active {
+  border-color: #111;
+  background: #fafafa;
+}
+
+.setup-method-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.setup-method-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.setup-method-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 3px;
+}
+
+.setup-method-desc {
+  font-size: 0.75rem;
+  color: #888;
+  margin: 0;
+}
+
+.setup-method-check {
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+
+.setup-method-check--active {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+/* Fields that expand under selected method */
+.setup-method-fields {
+  background: #f9f9f9;
+  border: 1.5px solid #e8e8e8;
+  border-top: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .setup-wrap { flex-direction: column; }
+
+  .setup-sidebar {
+    width: 100%;
+    padding: 1.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .setup-steps  { display: none; } /* hide on mobile, progress bar is enough */
+  .setup-info-box { margin-top: 0; flex: 1; min-width: 200px; }
+
+  .setup-main { padding: 1.5rem 1rem; }
+
+  .setup-row { grid-template-columns: 1fr; }
+
+  .setup-actions { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .setup-sidebar { padding: 1rem; }
+  .setup-info-box { display: none; }
+  .setup-title { font-size: 1.4rem; }
+}

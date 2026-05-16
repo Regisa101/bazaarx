@@ -1,0 +1,337 @@
+/* ═══════════════════════════════════════════════════════════════
+   SellerWallet.css  —  BazaarX Seller Wallet Page
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Balance grid ─────────────────────────────────────────────── */
+.sw-balance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) { .sw-balance-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .sw-balance-grid { grid-template-columns: 1fr 1fr; } }
+
+.sw-balance-card {
+  padding: 1.5rem 1.25rem;
+  border: 1px solid #f0f0f0;
+}
+
+.sw-balance-card--available  { background: #e8f5e9; border-color: #a5d6a7; }
+.sw-balance-card--earned     { background: #e3f2fd; border-color: #90caf9; }
+.sw-balance-card--commission { background: #fff3e0; border-color: #ffe082; }
+.sw-balance-card--withdrawn  { background: #fff; border-color: #f0f0f0; }
+
+.sw-balance-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #666;
+  margin: 0 0 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-balance-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 4px;
+  font-family: 'League Spartan', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.sw-balance-sub {
+  font-size: 0.72rem;
+  color: #888;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Info box ─────────────────────────────────────────────────── */
+.sw-info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  margin-bottom: 1rem;
+  font-size: 0.8125rem;
+  color: #1565c0;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+}
+
+/* ── Generic card ─────────────────────────────────────────────── */
+.sw-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sw-card--form {
+  border-color: #f0a500;
+  background: #fffbf0;
+}
+
+.sw-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.sw-card-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-close-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #888;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-close-btn:hover { color: #111; }
+
+/* ── Payout method ────────────────────────────────────────────── */
+.sw-payout-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+}
+
+.sw-payout-icon { font-size: 1.75rem; flex-shrink: 0; }
+
+.sw-payout-method {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-payout-account {
+  font-size: 0.8125rem;
+  color: #555;
+  margin: 0 0 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-payout-name {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-payout-badge {
+  margin-left: auto;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Withdrawal form ──────────────────────────────────────────── */
+.sw-available-hint {
+  font-size: 0.8125rem;
+  color: #555;
+  margin-bottom: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-available-hint strong { color: #2e7d32; font-weight: 700; }
+
+.sw-pending-hint {
+  color: #f57f17;
+  font-size: 0.78rem;
+  margin-left: 6px;
+}
+
+.sw-form { display: flex; flex-direction: column; gap: 0; }
+
+.sw-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) { .sw-form-grid { grid-template-columns: 1fr; } }
+
+/* ── Quick amount buttons ─────────────────────────────────────── */
+.sw-quick-amounts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.sw-quick-amt {
+  padding: 6px 14px;
+  background: #fff;
+  border: 1.5px solid #e8e8e8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0 !important;
+  transition: all 0.15s;
+}
+
+.sw-quick-amt:hover   { border-color: #f0a500; color: #111; }
+.sw-quick-amt.active  { background: #f0a500; color: #111; border-color: #f0a500; }
+
+.sw-form-error {
+  font-size: 0.8rem;
+  color: #c62828;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-form-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 1rem;
+  border-top: 1px solid #f0e0b0;
+}
+
+/* ── Success banner ───────────────────────────────────────────── */
+.sw-success-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #2e7d32;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── History list ─────────────────────────────────────────────── */
+.sw-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sw-history-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sw-history-row:last-child { border-bottom: none; }
+
+.sw-history-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.sw-history-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+
+.sw-history-id {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 2px;
+  font-family: 'Courier New', monospace;
+}
+
+.sw-history-meta {
+  font-size: 0.78rem;
+  color: #555;
+  margin: 0 0 2px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-history-date {
+  font-size: 0.72rem;
+  color: #aaa;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-history-note {
+  font-size: 0.72rem;
+  color: #888;
+  font-style: italic;
+  margin: 4px 0 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sw-history-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.sw-history-amount {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.sw-history-status {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Empty state ──────────────────────────────────────────────── */
+.sw-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 3rem;
+  color: #bbb;
+  font-size: 0.875rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+/* ── stl-badge (topbar notification dot) ─────────────────────── */
+.stl-badge {
+  background: #e53935;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 50% !important;
+  margin-left: 4px;
+}

@@ -1,0 +1,1131 @@
+.admin-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-topbar {
+  background: #1a1a2e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.admin-logo {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.admin-logo span { color: #f0a500; }
+
+.admin-role-badge {
+  background: #e53935;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.admin-topbar-links {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.atl {
+  padding: 0 16px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.atl:hover { color: #fff; }
+.atl.active { color: #f0a500; border-bottom-color: #f0a500; }
+
+.admin-topbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-topbar-user {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.admin-logout {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6);
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+}
+
+.admin-logout:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+.admin-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.5rem;
+}
+
+.admin-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.admin-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 4px;
+  font-family: 'League Spartan', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.admin-page-sub {
+  font-size: 0.875rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.admin-search {
+  padding: 8px 14px;
+  border: 1.5px solid #e8e8e8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  color: #111;
+  outline: none;
+  width: 260px;
+  border-radius: 0 !important;
+  transition: border-color 0.2s;
+}
+
+.admin-search:focus { border-color: #111; }
+
+/* Stats */
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-stat-card {
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #f0f0f0;
+}
+
+.admin-stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 8px;
+}
+
+.admin-stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+/* Quick actions */
+.admin-section {
+  background: #fff;
+  padding: 1.5rem;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 1.5rem;
+}
+
+.admin-section-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.admin-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.admin-quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.admin-action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 1.5rem;
+  border: 1.5px solid #f0f0f0;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.15s;
+}
+
+.admin-action-card:hover {
+  border-color: #f0a500;
+  background: #fffbf0;
+}
+
+.admin-action-card svg { color: #f0a500; }
+
+.admin-action-card p {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+.admin-action-card span {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Table */
+.admin-table {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
+}
+
+.admin-table-head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 10px 16px;
+  background: #f9f9f9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 12px 16px;
+  border-top: 1px solid #f5f5f5;
+  align-items: center;
+}
+
+.admin-table-row:hover { background: #fafafa; }
+
+.admin-product-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-product-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #f0f0f0;
+}
+
+.admin-product-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111;
+}
+
+.admin-cell {
+  font-size: 0.8375rem;
+  color: #555;
+}
+
+.admin-user-name { font-weight: 600; color: #111; }
+.admin-low { color: #e53935; font-weight: 600; }
+
+.admin-btn-remove {
+  padding: 4px 12px;
+  background: #fff;
+  border: 1.5px solid #ffcdd2;
+  color: #e53935;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+}
+
+.admin-btn-remove:hover { background: #ffebee; }
+
+.admin-confirm { display: flex; gap: 6px; align-items: center; }
+
+.admin-btn-del-confirm {
+  padding: 4px 10px;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0 !important;
+}
+
+.admin-btn-cancel {
+  padding: 4px 10px;
+  background: #f5f5f5;
+  color: #555;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0 !important;
+}
+
+/* Role badges */
+.admin-role-badge-sm {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-role-badge-sm.admin { background: #fce4ec; color: #c2185b; }
+.admin-role-badge-sm.seller { background: #fff8e1; color: #f57f17; }
+.admin-role-badge-sm.buyer { background: #e8f5e9; color: #2e7d32; }
+
+.admin-status-active {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+/* Seller topbar user */
+.seller-topbar-user {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Pending alert */
+.admin-pending-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #fff8e1;
+  border: 1.5px solid #f0a500;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: #111;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-pending-alert svg { color: #f0a500; flex-shrink: 0; }
+
+.admin-pending-btn {
+  margin-left: auto;
+  padding: 6px 16px;
+  background: #f0a500;
+  color: #111;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0 !important;
+}
+
+/* Tabs */
+.admin-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.admin-tab {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+}
+
+.admin-tab:hover { color: #111; }
+.admin-tab--active { color: #111; border-bottom-color: #f0a500; font-weight: 700; }
+
+/* Users table */
+.admin-users-head {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr 1fr 1.5fr;
+  gap: 1rem;
+  padding: 10px 16px;
+  background: #f9f9f9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-users-row {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr 1fr 1.5fr;
+  gap: 1rem;
+  padding: 14px 16px;
+  border-top: 1px solid #f5f5f5;
+  align-items: center;
+}
+
+.admin-users-row:hover { background: #fafafa; }
+
+.admin-user-email { font-size: 0.8rem; color: #888; }
+
+.admin-user-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Status badges */
+.admin-status-pending {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #e65100;
+  background: #fff3e0;
+  padding: 2px 8px;
+}
+
+.admin-status-suspended {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #b71c1c;
+  background: #ffebee;
+  padding: 2px 8px;
+}
+
+/* Action buttons */
+.admin-btn-approve {
+  padding: 5px 14px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1.5px solid #a5d6a7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+}
+
+.admin-btn-approve:hover { background: #c8e6c9; }
+
+.admin-btn-suspend {
+  padding: 5px 14px;
+  background: #fff;
+  color: #e53935;
+  border: 1.5px solid #ffcdd2;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+}
+
+.admin-btn-suspend:hover { background: #ffebee; }
+
+.admin-btn-activate {
+  padding: 5px 14px;
+  background: #fff;
+  color: #2e7d32;
+  border: 1.5px solid #a5d6a7;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+}
+
+.admin-btn-activate:hover { background: #e8f5e9; }
+
+.admin-empty-row {
+  padding: 3rem;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.875rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admin-users-head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 1rem;
+  padding: 10px 16px;
+  background: #f9f9f9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-users-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 1rem;
+  padding: 14px 16px;
+  border-top: 1px solid #f5f5f5;
+  align-items: center;
+}
+
+.admin-users-row:hover { background: #fafafa; }
+
+.admin-user-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-user-avatar {
+  width: 34px;
+  height: 34px;
+  background: #111;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.admin-user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 2px;
+}
+
+.admin-user-email {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.admin-status-flagged {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #e65100;
+  background: #fff3e0;
+  padding: 2px 8px;
+}
+
+/* Expanded details */
+.admin-user-expanded {
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-user-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .admin-user-details-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.admin-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-detail-item--full {
+  grid-column: 1 / -1;
+}
+
+.admin-detail-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #aaa;
+}
+
+.admin-detail-item span:last-child {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+/* ── Admin dashboard new styles ── */
+.adm-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.adm-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 4px;
+  font-family: 'League Spartan', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.adm-sub { font-size: 0.8125rem; color: #aaa; margin: 0; }
+
+/* Alerts */
+.adm-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+.adm-alert--amber { background: #fff8e1; border: 1px solid #ffe082; color: #f57f17; }
+.adm-alert--red   { background: #ffebee; border: 1px solid #ffcdd2; color: #c62828; }
+.adm-alert-cta    { margin-left: auto; font-weight: 700; }
+
+/* Stats grid */
+.adm-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) { .adm-stats-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .adm-stats-grid { grid-template-columns: 1fr 1fr; } }
+
+.adm-stat-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.adm-stat-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  border-radius: 0 !important;
+}
+
+.adm-stat-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #aaa;
+  margin: 0 0 4px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.adm-stat-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111;
+  margin: 0 0 2px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.adm-stat-sub { font-size: 0.72rem; color: #aaa; margin: 0; }
+
+/* Cards */
+.adm-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.adm-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.adm-card-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.adm-card-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f0a500;
+  text-decoration: none;
+}
+
+.adm-empty { font-size: 0.875rem; color: #bbb; text-align: center; padding: 2rem 0; margin: 0; }
+
+.adm-tab-badge {
+  background: #e53935;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 50% !important;
+  margin-left: 4px;
+}
+
+/* Chart */
+.adm-chart-wrap {
+  display: flex;
+  gap: 8px;
+  height: 180px;
+  margin-bottom: 1rem;
+}
+
+.adm-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.adm-y-label { font-size: 0.65rem; color: #bbb; white-space: nowrap; }
+
+.adm-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  flex: 1;
+}
+
+.adm-bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 4px;
+  height: 100%;
+}
+
+.adm-bar-wrap { flex: 1; width: 100%; display: flex; align-items: flex-end; }
+
+.adm-bar { width: 100%; background: #e8e8e8; min-height: 4px; transition: height 0.4s; }
+.adm-bar--today { background: #f0a500; }
+.adm-bar-label { font-size: 0.68rem; color: #aaa; }
+
+/* Orders table */
+.adm-orders-table { overflow-x: auto; }
+
+.adm-orders-head {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.8fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 8px 12px;
+  background: #f9f9f9;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.adm-orders-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 0.8fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 10px 12px;
+  border-top: 1px solid #f5f5f5;
+  align-items: center;
+  font-size: 0.8125rem;
+}
+
+.adm-orders-row:hover { background: #fafafa; }
+
+.adm-order-id {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  color: #555;
+}
+
+.adm-cell { font-size: 0.8125rem; color: #555; }
+
+.adm-status-chip {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.adm-status-confirmed  { background: #e3f2fd; color: #1565c0; }
+.adm-status-processing { background: #fff8e1; color: #f57f17; }
+.adm-status-shipped    { background: #e8eaf6; color: #283593; }
+.adm-status-delivered  { background: #e8f5e9; color: #2e7d32; }
+.adm-status-cancelled  { background: #ffebee; color: #c62828; }
+
+/* Sellers */
+.adm-sellers-table { overflow-x: auto; }
+
+.adm-sellers-head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 8px 12px;
+  background: #f9f9f9;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.adm-sellers-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 12px;
+  border-top: 1px solid #f5f5f5;
+  align-items: center;
+}
+
+.adm-sellers-row:hover { background: #fafafa; }
+
+.adm-seller-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adm-seller-avatar {
+  width: 34px;
+  height: 34px;
+  background: #111;
+  color: #fff;
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.adm-avatar-red { background: #e53935 !important; }
+
+.adm-seller-name  { font-size: 0.875rem; font-weight: 600; color: #111; margin: 0 0 2px; }
+.adm-seller-email { font-size: 0.72rem; color: #aaa; margin: 0; }
+.adm-seller-meta  { font-size: 0.72rem; color: #888; margin: 0; }
+
+.adm-commission { color: #2e7d32; font-weight: 600; }
+
+.adm-commission-summary {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f5f5f5;
+  font-size: 0.875rem;
+  color: #555;
+  font-family: 'Poppins', sans-serif;
+}
+
+.adm-seller-pending-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f5f5f5;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.adm-seller-info { display: flex; align-items: flex-start; gap: 12px; }
+.adm-seller-actions { display: flex; gap: 8px; }
+
+/* Performance bars */
+.adm-perf-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.adm-perf-label {
+  font-size: 0.8rem;
+  color: #555;
+  width: 160px;
+  flex-shrink: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.adm-perf-bar-wrap { flex: 1; height: 8px; background: #f0f0f0; }
+.adm-perf-bar { height: 100%; transition: width 0.6s; min-width: 0; }
+.adm-perf-val { font-size: 0.78rem; font-weight: 700; color: #111; width: 80px; text-align: right; }
+
+/* Suspicious */
+.adm-detection-rules {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.adm-detection-rules h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.adm-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 768px) { .adm-rules-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.adm-rule-card {
+  padding: 1rem;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.adm-rule-icon  { font-size: 1.25rem; }
+.adm-rule-text  { font-size: 0.78rem; color: #555; margin: 0; font-family: 'Poppins', sans-serif; }
+.adm-rule-action { font-size: 0.7rem; font-weight: 700; color: #f57f17; }
+
+.adm-suspicious-card {
+  background: #fff;
+  border: 1px solid #ffcdd2;
+  padding: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.adm-suspicious-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.adm-suspicious-actions { display: flex; gap: 8px; }
+
+.adm-suspicious-reasons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.adm-reason-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.adm-suspicious-stats {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.78rem;
+  color: #888;
+  font-family: 'Poppins', sans-serif;
+}
+
+.adm-suspicious-stats strong { color: #111; }
+
+.adm-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 3rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Coupons */
+.adm-coupon-form { display: flex; flex-direction: column; gap: 0; }
+
+.adm-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) { .adm-form-grid { grid-template-columns: 1fr 1fr; } }
+
+.adm-field { display: flex; flex-direction: column; gap: 6px; }
+.adm-field--full { grid-column: 1 / -1; }
+
+.adm-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+}
+
+.adm-field input,
+.adm-field select {
+  padding: 9px 12px;
+  border: 1.5px solid #e8e8e8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  color: #111;
+  outline: none;
+  border-radius: 0 !important;
+  background: #fff;
+}
+
+.adm-field input:focus,
+.adm-field select:focus { border-color: #111; }
+
+.adm-primary-btn {
+  padding: 10px 22px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0 !important;
+  transition: background 0.2s;
+}
+
+.adm-primary-btn:hover { background: #333; }
+
+.adm-coupon-list { display: flex; flex-direction: column; gap: 10px; }
+
+.adm-coupon-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border: 1.5px solid #f0f0f0;
+  gap: 1rem;
+  flex-wrap: wrap;
+  transition: border-color 0.15s;
+}
+
+.adm-coupon-card:hover { border-color: #e8e8e8; }
+.adm-coupon-inactive { opacity: 0.5; }
+
+.adm-coupon-left { display: flex; align-items: center; gap: 1rem; }
+
+.adm-coupon-code-badge {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: #111;
+  background: #f5f5f5;
+  padding: 6px 14px;
+  letter-spacing: 0.08em;
+  border: 1.5px dashed #ddd;
+  white-space: nowrap;
+}
+
+.adm-coupon-desc { font-size: 0.875rem; font-weight: 500; color: #111; margin: 0 0 4px; }
+.adm-coupon-meta { font-size: 0.72rem; color: #aaa; margin: 0; }
+
+.adm-coupon-right { display: flex; align-items: center; gap: 1rem; }
+
+.adm-coupon-usage { text-align: center; }
+.adm-usage-count { font-size: 1.25rem; font-weight: 800; color: #111; display: block; font-family: 'League Spartan', sans-serif; }
+.adm-usage-max   { font-size: 0.7rem; color: #aaa; }
+
+.adm-coupon-actions { display: flex; gap: 8px; }
+
+.adm-toggle-btn {
+  padding: 5px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0 !important;
+}
+
+.adm-toggle-active   { background: #e8f5e9; color: #2e7d32; }
+.adm-toggle-inactive { background: #ffebee; color: #c62828; }

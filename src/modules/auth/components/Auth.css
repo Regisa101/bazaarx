@@ -1,0 +1,359 @@
+.auth-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.auth-card {
+  background: #fff;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 480px;
+  border: 1px solid #f0f0f0;
+}
+
+.auth-card--wide { max-width: 620px; }
+
+.auth-logo {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.auth-logo span { color: #f0a500; }
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 4px;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.auth-sub {
+  font-size: 0.875rem;
+  color: #aaa;
+  margin: 0 0 1.5rem;
+}
+
+.auth-error {
+  background: #ffebee;
+  color: #c62828;
+  padding: 10px 14px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border-left: 3px solid #e53935;
+  line-height: 1.5;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.auth-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 500px) { .auth-form-grid { grid-template-columns: 1fr; } }
+
+.auth-section-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #aaa;
+  margin: 0.5rem 0 -4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.auth-field { display: flex; flex-direction: column; gap: 6px; }
+
+.auth-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.auth-field input,
+.auth-field select,
+.auth-field textarea {
+  padding: 10px 12px;
+  border: 1.5px solid #e8e8e8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  color: #111;
+  outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0 !important;
+  background: #fff;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.auth-field input:focus,
+.auth-field select:focus { border-color: #111; }
+
+.cf-error { font-size: 0.75rem; color: #e53935; font-weight: 500; }
+
+.auth-btn {
+  width: 100%;
+  padding: 11px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s;
+  border-radius: 0 !important;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.auth-btn:hover:not(:disabled) { background: #333; }
+.auth-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.auth-switch {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: #888;
+  margin: 0;
+}
+
+.auth-switch a,
+.auth-switch-link {
+  color: #f0a500;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.8125rem;
+}
+
+/* Role picker */
+.auth-role-picker {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.role-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 1rem;
+  border: 2px solid #e8e8e8;
+  background: #fff;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+}
+
+.role-btn-label { font-size: 0.9rem; font-weight: 600; color: #333; }
+.role-btn-sub { font-size: 0.72rem; color: #aaa; font-weight: 400; }
+.role-btn:hover { border-color: #111; }
+.role-btn--active { border-color: #f0a500; background: #fffbf0; }
+
+/* Seller signup steps */
+.seller-signup-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 1.5rem;
+}
+
+.ss-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #bbb;
+}
+
+.ss-step--active { color: #111; }
+
+.ss-step-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.ss-step--active .ss-step-circle {
+  border-color: #f0a500;
+  background: #f0a500;
+  color: #111;
+}
+
+.ss-step-line {
+  flex: 1;
+  height: 1px;
+  background: #e8e8e8;
+  margin: 0 10px;
+}
+
+.seller-trust-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #fff8e1;
+  border-left: 3px solid #f0a500;
+  font-size: 0.78rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.seller-trust-note svg { color: #f0a500; flex-shrink: 0; margin-top: 1px; }
+
+.auth-nav-btns { display: flex; gap: 10px; }
+
+.auth-back-btn {
+  padding: 11px 20px;
+  background: #fff;
+  border: 1.5px solid #ddd;
+  color: #555;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.15s;
+  border-radius: 0 !important;
+  flex-shrink: 0;
+}
+
+.auth-back-btn:hover { border-color: #111; color: #111; }
+
+/* Pending */
+.auth-pending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.pending-icon-wrap {
+  width: 56px;
+  height: 56px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-pending h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  font-family: 'League Spartan', sans-serif;
+}
+
+.auth-pending-info {
+  background: #f9f9f9;
+  padding: 1rem 1.25rem;
+  text-align: left;
+  width: 100%;
+}
+
+.auth-pending-info p { font-size: 0.8rem; font-weight: 700; color: #111; margin: 0 0 6px; }
+
+.auth-pending-info ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auth-pending-info li { font-size: 0.78rem; color: #555; line-height: 1.5; }
+
+/* Demo accounts */
+.auth-demo-accounts {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f5f5f5;
+}
+
+.auth-demo-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #bbb;
+  margin: 0 0 10px;
+}
+
+.auth-demo-list { display: flex; flex-direction: column; gap: 6px; }
+
+.auth-demo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.78rem;
+  color: #666;
+}
+
+.auth-demo-clickable {
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  transition: background 0.15s;
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+.auth-demo-clickable:hover { background: #f0f0f0; }
+
+.auth-demo-role {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.auth-demo-role.admin { background: #fce4ec; color: #c2185b; }
+.auth-demo-role.seller { background: #fff8e1; color: #f57f17; }
+.auth-demo-role.buyer { background: #e8f5e9; color: #2e7d32; }
+
+.auth-demo-click {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: #bbb;
+  font-style: italic;
+}
